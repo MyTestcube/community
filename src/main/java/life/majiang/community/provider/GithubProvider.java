@@ -15,27 +15,7 @@ public class GithubProvider {
     public String getAccessToken(AccessTokenDTO  accessTokenDTO){
         MediaType mediaType = MediaType.get("application/json; charset=utf-8");
         OkHttpClient client = new OkHttpClient();
-//                .connectTimeout(10, TimeUnit.SECONDS)
-//                .writeTimeout(10, TimeUnit.SECONDS)
-//                .readTimeout(30, TimeUnit.SECONDS)
-//                .build();
 
-//        client.newCall(request).enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                Log.d(TAG, "onFailure: " + e.getMessage());
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                Log.d(TAG, response.protocol() + " " +response.code() + " " + response.message());
-//                Headers headers = response.headers();
-//                for (int i = 0; i < headers.size(); i++) {
-//                    Log.d(TAG, headers.name(i) + ":" + headers.value(i));
-//                }
-//                Log.d(TAG, "onResponse: " + response.body().string());
-//            }
-//        });
 
 
 
