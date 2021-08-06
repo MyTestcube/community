@@ -1,7 +1,7 @@
 package life.majiang.community.model;
 
 public class User {
-    private  Integer id;
+    private Integer id;
     private String name;
     private String accountId;
     private String token;

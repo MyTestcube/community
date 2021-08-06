@@ -5,10 +5,7 @@ import life.majiang.community.dto.AccessTokenDTO;
 import life.majiang.community.dto.GithubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
-
-
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 @Component
 public class GithubProvider {
