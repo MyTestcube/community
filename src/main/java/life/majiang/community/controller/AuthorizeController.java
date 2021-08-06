@@ -30,22 +30,22 @@ public class AuthorizeController {
 
     @Autowired(required = false)
     private UserMapper userMapper;
-
+//
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
                            HttpServletRequest request){
 
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
-        accessTokenDTO.setClient_id("clientId");//5ef1314640c129e68f62
-        accessTokenDTO.setClient_secret("clientSecret");//6ba808b82f7820ce0c0b42085f3aec649f70eaef
+        accessTokenDTO.setClient_id(clientId);//5ef1314640c129e68f62
+        accessTokenDTO.setClient_secret(clientSecret);//6ba808b82f7820ce0c0b42085f3aec649f70eaef
         accessTokenDTO.setCode(code);
-        accessTokenDTO.setRedirect_uri("redirectUri");//http://localhost:8888/callback
+        accessTokenDTO.setRedirect_uri(redirectUri);//http://localhost:8888/callback
         accessTokenDTO.setState(state);
 //        githubProvider.getAccessToken(accessTokenDTO);
         String accessToken=githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubUser =githubProvider.getUser(accessToken);
-        if (githubUser!=null){
+        if(githubUser!=null){
 //shift+f6(更改所有代码)
             User user = new User();
             user.setToken(UUID.randomUUID().toString());
@@ -55,7 +55,7 @@ public class AuthorizeController {
             user.setGmtModified(user.getGmtCreate());
             userMapper.insert(user);
             //登录成功，写cookie和session
-            request.getSession().setAttribute("githubUser",user);
+            request.getSession().setAttribute("user",githubUser);
             return "redirect:/";
 
         }else {
