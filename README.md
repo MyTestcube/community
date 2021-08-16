@@ -8,7 +8,7 @@
 
 [GitHub deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)
 
-[Boot   strap v3中文文档](https://v3.bootcss.com/getting-started/)
+[Boot strap v3中文文档](https://v3.bootcss.com/getting-started/)
 
 [GitHub OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)
 
@@ -21,6 +21,8 @@
 [Visual Paradigm官网](https://www.visual-paradigm.com)
 
 [Flyway](http://flywaydb.org/getstarted/fiststeps/maven)
+
+[Lombok](https://projectlombok.org/)
 
 ##脚本
 
@@ -42,3 +44,8 @@ create table USER
 ```bash
 
 ```
+
+
+##笔记
+8-11：发布页面p20
+     创建新数据库p21
