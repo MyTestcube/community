@@ -1,6 +1,6 @@
 package life.majiang.community.controller;
 
-import life.majiang.community.mapper.Question;
+import life.majiang.community.model.Question;
 import life.majiang.community.mapper.QuestionMapper;
 import life.majiang.community.mapper.UserMapper;
 import life.majiang.community.model.User;

@@ -2,6 +2,7 @@ package life.majiang.community.mapper;
 
 import life.majiang.community.model.User;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 //ctrl + alt + o自动移除不必要的import
@@ -13,4 +14,7 @@ public interface UserMapper {
 
     @Select("select * from user where token = #{token}")
     User findByToken(String token);
+
+    @Select("select * from user where token = #{id}")
+    User findById(@Param("id") Integer creator);
 }

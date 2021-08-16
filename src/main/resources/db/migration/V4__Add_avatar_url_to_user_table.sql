@@ -1,1 +1,1 @@
-alter table USER alter column AVATAR_URL VARCHAR(100po);
+alter table USER alter column AVATAR_URL VARCHAR(100);
