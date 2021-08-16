@@ -16,6 +16,9 @@
 
 [Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-theach)
 
+[Spring Dev Tool](https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#using-boot-devtools)
+
+
 ##工具
 
 [Git下载地址](https://git-scm.com/download)
@@ -25,6 +28,12 @@
 [Flyway](http://flywaydb.org/getstarted/fiststeps/maven)
 
 [Lombok](https://projectlombok.org/)
+
+[Table of contents sidebar](https://chrome.google.com/webstore/detail/table-of-contents-sidebar/ohohkfheangmbedkgechjkmbepeikkej?hl=zh-CN)
+
+[one tab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=zh-CN)
+
+[Live Reload](https://chrome.google.com/webstore/detail/live-reload/jcejoncdonagmfohjcdgohnmecaipidc?hl=zh-CN)
 
 ##脚本
 
