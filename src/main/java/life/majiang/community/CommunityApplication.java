@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan("life.majiang.community.mapper") //配置扫描包
+@MapperScan(basePackages = "life.majiang.community.mapper") //配置扫描包
 public class CommunityApplication {
 
     public static void main(String[] args) {

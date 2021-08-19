@@ -12,10 +12,13 @@
 
 [GitHub OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)
 
+[Spring](https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#boot-features-embedded-database-support)
+
 [Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-theach)
 
 [Spring Dev Tool](https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#using-boot-devtools)
 
+[]()
 
 ##工具
 
@@ -51,6 +54,9 @@ create table USER
 
 ```
 ```bash
+mvn compile flyway:migrate
+mvn flyway:migrate
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 
 ```
 
