@@ -36,6 +36,7 @@
 
 [Live Reload](https://chrome.google.com/webstore/detail/live-reload/jcejoncdonagmfohjcdgohnmecaipidc?hl=zh-CN)
 
+[Postman](https://chrome.google.com/webstore/detail/tabbed-postman-rest-clien/coohjcphdfgbiolnekdpbcijmhambjff/related?hl=zh-CN)
 ##脚本
 
 ```sql
