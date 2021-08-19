@@ -18,7 +18,7 @@ public class CustomizeErrprController implements ErrorController {
         return "error";
     }
 
-    @RequestMapping(produces=MediaType.TEXT_HTML_VALUE)
+    @RequestMapping(produces = MediaType.TEXT_HTML_VALUE)
     public ModelAndView errorHtml(HttpServletRequest request, Model model) {
         HttpStatus status = getStatus(request);
 
@@ -30,8 +30,9 @@ public class CustomizeErrprController implements ErrorController {
         }
         return new ModelAndView ("error");
     }
-    protected HttpStatus getStatus(HttpServletRequest request) {
-        Integer statusCode = (Integer)request.getAttribute("javax.servlet.error.status_code");
+    private HttpStatus getStatus(HttpServletRequest request) {
+        Integer statusCode = (Integer)request
+                .getAttribute("javax.servlet.error.status_code");
         if (statusCode == null) {
             return HttpStatus.INTERNAL_SERVER_ERROR;
         }

@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
 public class CustomizeExceptionHandler {
-
     @ExceptionHandler(Exception.class)
     ModelAndView handle(Throwable e, Model model) {
         if (e instanceof CustomizeException) {

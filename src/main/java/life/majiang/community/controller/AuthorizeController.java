@@ -44,10 +44,9 @@ public class AuthorizeController {
         accessTokenDTO.setCode(code);
         accessTokenDTO.setRedirect_uri(redirectUri);//http://localhost:8888/callback
         accessTokenDTO.setState(state);
-//        githubProvider.getAccessToken(accessTokenDTO);
         String accessToken=githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubUser =githubProvider.getUser(accessToken);
-        if(githubUser!=null&&githubUser.getId()!=null){
+        if(githubUser!=null && githubUser.getId()!=null){
 //shift+f6(更改所有代码)
             User user = new User();
             String token=UUID.randomUUID().toString();
@@ -70,9 +69,10 @@ public class AuthorizeController {
     @GetMapping("/logout")
     public String logout(HttpServletRequest request,
                          HttpServletResponse response){
-        request.getSession().removeAttribute("user");
+        request.getSession().invalidate();
         Cookie cookie=new Cookie("token",null);
         cookie.setMaxAge(0);
+        cookie.setPath("/");
         response.addCookie(cookie);
 
         return "redirect:/";
