@@ -2,7 +2,7 @@ create table QUESTION
 (
     ID            INT auto_increment,
     TITLE         VARCHAR(50),
-    DESCRIPTION   BIGINT,
+    DESCRIPTION   text,
     GMT_CREATE    BIGINT,
     GMT_MODIFIED  BIGINT,
     CREATOR       INT,
