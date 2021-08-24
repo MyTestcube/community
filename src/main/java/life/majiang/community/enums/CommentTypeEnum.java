@@ -8,7 +8,7 @@ public enum CommentTypeEnum {
 
     public static boolean isExist(Integer type) {
         for (CommentTypeEnum commentTypeEnum : CommentTypeEnum.values()) {
-            if(commentTypeEnum.getType()==type){
+            if (commentTypeEnum.getType() == type) {
                 return true;
             }
         }
@@ -19,7 +19,7 @@ public enum CommentTypeEnum {
         return type;
     }
 
-    CommentTypeEnum(Integer type){
+    CommentTypeEnum(Integer type) {
         this.type = type;
     }
 }
