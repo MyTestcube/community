@@ -27,6 +27,9 @@ body{
 .question-title{
     margin-top: 25px;
 }
+.question-tag{
+    margin-right: 5px;
+}
 .comment-menu{
     display: block;
     color: #999;

@@ -36,8 +36,10 @@ public class AuthorizeController {
 
     //(required = false)
     @GetMapping("/callback")
-    public String callback(@RequestParam(name = "code") String code,
-                           @RequestParam(name = "state") String state,
+    public String callback(@RequestParam(name = "type") String type,
+                           @RequestParam(name = "code") String code,
+                           @RequestParam(name = "state",required = false) String state,
+                           HttpServletRequest request,
                            HttpServletResponse response) {
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setClient_id(clientId);//5ef1314640c129e68f62
