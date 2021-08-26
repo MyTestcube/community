@@ -16,13 +16,10 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     public String getMessage() {
         return message;
     }
-
     @Override
     public Integer getCode() {
         return code;
     }
-
-
     private String message;
     private Integer code;
 
@@ -30,5 +27,4 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
         this.message = message;
         this.code = code;
     }
-
 }
