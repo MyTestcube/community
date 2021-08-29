@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class PublishController {
+public class    PublishController {
     @Autowired
     private QuestionService questionService;
 
@@ -55,6 +55,7 @@ public class PublishController {
             model.addAttribute("error", "标题不能为空");
             return "publish";
         }
+
         if (description == null || description == "") {
             model.addAttribute("error", "问题补充不能为空");
             return "publish";

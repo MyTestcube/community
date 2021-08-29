@@ -108,18 +108,18 @@
                     <div class="media-left">
                         <a href="#">
                             <img class="media-object img-rounded"
-                                 th:src="${question.user.avatarUrl}">
+                                 th:src="${session.user!=null?session.user.avatarUrl:'/images/default-avatar.png'}">
                         </a>
                     </div>
                     <div class="media-body">
                         <h6 class="media-heading">
-                            <span th:text="${question.user.name}"></span>
+                            <span th:text="${session.user!=null?session.user.name:'匿名用戶'}"></span>
                         </h6>
                     </div>
                 </div>
-                <inpkut type="hidden" id="question_id" th:value="${question.id}"></inpkut>
+                < type="hidden" id="question_id" th:value="${question.id}">
                 <textarea class="form-control comment" rows="6" id="comment_content"></textarea>
-                <button type="button" class="btn btn-success btn-comment" onclick="post">回复</button>
+                <button type="button" class="btn btn-success btn-comment" onclick="post()">回复</button>
             </div>
         </div>
     </div>

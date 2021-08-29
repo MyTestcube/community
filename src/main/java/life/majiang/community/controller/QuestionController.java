@@ -25,18 +25,18 @@ public class QuestionController {
     private CommentService commentService;
 
     @GetMapping("/question/{id}")
-    public String question(@PathVariable(name = "id") String id, Model model) {
-        Long questionId = null;
-        try{
-            questionId=Long.parseLong(id);
-        }catch (NumberFormatException e){
-//            throw new CustomizeException(CustomizeErrorCode.INVALID_INPUT);
-        }
-        QuestionDTO questionDTO = questionService.getById(questionId);
+    public String question(@PathVariable(name = "id") Long id, Model model) {
+//        Long questionId = null;
+//        try{
+//            questionId=Long.parseLong(id);
+//        }catch (NumberFormatException e){
+////            throw new CustomizeException(CustomizeErrorCode.INVALID_INPUT);
+//        }
+        QuestionDTO questionDTO = questionService.getById(id);
         List<QuestionDTO> relatedQuestions=questionService.selectRelated(questionDTO);
-        List<CommentDTO> comments = commentService.listByTargetId(questionId, CommentTypeEnum.QUESTION);
+        List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
         //累加阅读量
-        questionService.incView(questionId);
+        questionService.incView(id);
         model.addAttribute("question", questionDTO);
         model.addAttribute("comment", comments);
         model.addAttribute("relatedQuestions", relatedQuestions);

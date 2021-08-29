@@ -1,4 +1,4 @@
-package life.majiang.community.provider;
+package life.majiang.community.provider.dto;
 
 import com.alibaba.fastjson.JSON;
 import life.majiang.community.dto.AccessTokenDTO;
