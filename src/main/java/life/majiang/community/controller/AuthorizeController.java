@@ -95,7 +95,7 @@ public class AuthorizeController {
             response.addCookie(cookie);
 
             //登录成功，写cookie和session
-            request.getSession().setAttribute("user",githubUser);
+            request.getSession().setAttribute("user",user);
             return "redirect:/";
 
         } else {
