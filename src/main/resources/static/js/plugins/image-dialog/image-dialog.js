@@ -162,6 +162,7 @@
                             loading(false);
 
                             var body = (uploadIframe.contentWindow ? uploadIframe.contentWindow : uploadIframe.contentDocument).document.body;
+                            var jsonContainer = body.getElementsByTagName("pre")[0];
                             var json = (body.innerText) ? body.innerText : ( (body.textContent) ? body.textContent : null);
 
                             json = (typeof JSON.parse !== "undefined") ? JSON.parse(json) : eval("(" + json + ")");
