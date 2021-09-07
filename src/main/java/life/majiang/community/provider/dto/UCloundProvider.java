@@ -11,22 +11,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.UUID;
 
 @Service
-public class UcloundProvider {
+public class UCloundProvider {
     @Value("${ucloud.ufile.public-key}")
     private String publickey;
     @Value("${ucloud.ufile.private-key}")
     private String privatekey;
-    ObjectAuthorization objectAuthorization = new UfileObjectLocalAuthorization(publickey, privatekey);
-    ObjectConfig config = new ObjectConfig("cn-bj", "ufileos.com");
 
-    public String upload(File fileStream, String mimeType, String fileName) {
-        File file = new File("your file path");
 
-        String generateFileName = "";
-        String[] filePaths = fileName.split(".");
+    public String upload(InputStream fileStream, String mimeType, String fileName) {
+        String generateFileName ;
+        String[] filePaths = fileName.split("\\.");
         if (filePaths.length > 1) {
             generateFileName = UUID.randomUUID().toString()+"."+filePaths[filePaths.length-1];
         }else {
@@ -34,6 +32,8 @@ public class UcloundProvider {
         }
 
         try {
+            ObjectAuthorization objectAuthorization = new UfileObjectLocalAuthorization(publickey, privatekey);
+            ObjectConfig config = new ObjectConfig("cn-bj", "ufileos.com");
             PutObjectResultBean response = UfileClient.object(objectAuthorization, config)
                     .putObject(fileStream, mimeType)
                     .nameAs(generateFileName)
