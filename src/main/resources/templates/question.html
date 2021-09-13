@@ -122,9 +122,9 @@
                         </a>
                     </div>
                     <div class="media-body">
-                        <h6 class="media-heading">
+                        <h5 class="media-heading">
                             <span th:text="${session.user!=null?session.user.name:'匿名用戶'}"></span>
-                        </h6>
+                        </h5>
                     </div>
                 </div>
                 < type="hidden" id="question_id" th:value="${question.id}">
@@ -171,6 +171,7 @@
     </div>
 </div>
 </div>
+<div th:insert="~{footer :: foot}"></div>
 
 </body>
 </html>

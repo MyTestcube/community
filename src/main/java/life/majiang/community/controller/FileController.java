@@ -1,7 +1,7 @@
 package life.majiang.community.controller;
 
 import life.majiang.community.dto.FileDTO;
-import life.majiang.community.provider.dto.UCloundProvider;
+import life.majiang.community.provider.dto.UCloudProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,17 +16,20 @@ import java.io.IOException;
 public class FileController {
 
     @Autowired
-    private UCloundProvider uCloundProvider;
-
+    private UCloudProvider uCloudProvider;
 
     @RequestMapping("/file/upload")
     @ResponseBody
-    public FileDTO upload(HttpServletRequest request){
-        MultipartHttpServletRequest multipartRequest=(MultipartHttpServletRequest)request;
-        MultipartFile file = multipartRequest.getFile("editormd-image-fole");
+    public FileDTO upload(HttpServletRequest request) {
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        MultipartFile file = multipartRequest.getFile("editormd-image-file");
         try {
-            uCloundProvider.upload(file.getInputStream(), file.getContentType(), file.getOriginalFilename());
-        } catch (IOException e) {
+            String fileName= uCloudProvider.upload(file.getInputStream(), file.getContentType(), file.getOriginalFilename());
+            FileDTO fileDTO = new FileDTO();
+            fileDTO.setSuccess(1);
+            fileDTO.setUrl(fileName);
+            return fileDTO;
+        } catch (Exception e) {
             e.printStackTrace();
         }
         FileDTO fileDTO = new FileDTO();
